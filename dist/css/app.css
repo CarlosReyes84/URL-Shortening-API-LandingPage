@@ -10,6 +10,7 @@ html {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -20,6 +21,10 @@ body {
 
 input, button, textarea, select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 .header {
@@ -87,4 +92,68 @@ input, button, textarea, select {
   border: none;
   font-weight: bold;
   cursor: pointer;
+}
+
+.statistics {
+  position: relative;
+  padding: 8rem 0rem;
+}
+.statistics .statistics-bg {
+  background-color: #f0f1f6;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  left: -20rem;
+}
+.statistics h2 {
+  font-size: 2.5rem;
+}
+.statistics p {
+  font-size: 1.4rem;
+  color: hsl(257deg, 7%, 63%);
+}
+.statistics .cards-statistics {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  margin-top: 8rem;
+}
+.statistics .cards-statistics h3 {
+  font-size: 2rem;
+}
+.statistics .cards-statistics .card-statistics {
+  position: relative;
+  padding: 4rem 2rem 2rem;
+  background-color: #fff;
+}
+.statistics .cards-statistics .card-statistics::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  width: 10px;
+  height: 100px;
+  background-color: hsl(180deg, 66%, 49%);
+  left: 50%;
+  transform: translateX(-25%);
+}
+.statistics .cards-statistics .card-statistics:last-of-type::after {
+  display: none;
+}
+.statistics .cards-statistics .card-statistics .bg-img {
+  background-color: hsl(257deg, 27%, 26%);
+  position: absolute;
+  padding: 1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 7rem;
+  display: grid;
+  place-content: center;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.statistics .cards-statistics .card-statistics .bg-img img {
+  width: 35px;
 }
