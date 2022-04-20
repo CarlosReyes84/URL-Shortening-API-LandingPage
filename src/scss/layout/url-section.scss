@@ -1,0 +1,33 @@
+@use './../main/variables.scss' as *;
+
+.url-section {
+    background-color: $dark-violet;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    margin: 7rem 0rem;
+    background-image: url('/images/bg-boost-mobile.svg');
+        .input-text {
+            height: 2.5rem;
+            border-radius: .7rem;
+            border: none;
+            margin-bottom: 1.5rem;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            &:focus {
+                border: 1px solid red;
+            }
+        }
+        .input-submit {
+            width: 100%;
+            background-color: $cyan;
+            color: #fff;
+            font-size: 1.9rem;
+            padding: 1rem;
+            border-radius: .7rem;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+}

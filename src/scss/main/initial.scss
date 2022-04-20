@@ -10,10 +10,11 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
-img {
-    max-width: 100%;
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
 }
-
 input, button, textarea, select {
     font: inherit;
 }

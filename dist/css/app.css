@@ -12,10 +12,79 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-img {
-  max-width: 100%;
+.container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 input, button, textarea, select {
   font: inherit;
+}
+
+.header {
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header nav .hamburger {
+  width: 3.7rem;
+}
+
+.get-started .work {
+  width: 50rem !important;
+}
+.get-started .text-section1 h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.get-started .text-section1 p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: hsl(257deg, 7%, 63%);
+}
+.get-started .text-section1 .btn-get-started {
+  background: hsl(180deg, 66%, 49%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 3rem;
+}
+
+.url-section {
+  background-color: hsl(257deg, 27%, 26%);
+  padding: 2.4rem;
+  border-radius: 1rem;
+  margin: 7rem 0rem;
+  background-image: url("/images/bg-boost-mobile.svg");
+}
+.url-section .input-text {
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  border: none;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+.url-section .input-text:focus {
+  border: 1px solid red;
+}
+.url-section .input-submit {
+  width: 100%;
+  background-color: hsl(180deg, 66%, 49%);
+  color: #fff;
+  font-size: 1.9rem;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
