@@ -1,0 +1,31 @@
+@use './../main/variables.scss' as *;
+
+.boost {
+    position: relative;
+    padding: 7rem 0rem;
+    h2 {
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    button {
+        background-color: $cyan;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 3rem;
+    }
+    .bg-boost {
+        background-color: $dark-violet;
+        background-image: url('/images/bg-boost-mobile.svg');
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -55px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
