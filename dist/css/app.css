@@ -37,8 +37,12 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+.header .logo {
+  cursor: pointer;
+}
 .header nav .hamburger {
   width: 3.7rem;
+  cursor: pointer;
 }
 
 .get-started .work {
@@ -102,7 +106,6 @@ ul {
 .statistics {
   position: relative;
   padding: 8rem 0rem;
-  border: 1px solid red;
 }
 .statistics .statistics-bg {
   background-color: #f0f1f6;
@@ -198,6 +201,9 @@ ul {
   position: relative;
   padding: 5rem 0rem;
 }
+.footer .logo img {
+  cursor: pointer;
+}
 .footer .bg-footer {
   position: absolute;
   height: 100%;
@@ -211,15 +217,28 @@ ul {
   color: #fff;
   font-size: 1.4rem;
 }
+.footer nav .info ul {
+  display: flex;
+  flex-direction: column;
+}
 .footer nav .info ul li {
   list-style: none;
   color: hsl(0deg, 0%, 75%);
   font-size: 1.2rem;
   line-height: 2.7rem;
+  display: inline-block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.footer nav .info ul li:hover {
+  border-bottom: 1px solid #fff;
 }
 .footer .logos {
   margin-top: 5rem;
   display: flex;
   justify-content: center;
   gap: 3rem;
+}
+.footer .logos img {
+  cursor: pointer;
 }

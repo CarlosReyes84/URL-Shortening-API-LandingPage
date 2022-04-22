@@ -3,9 +3,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .logo {
+        cursor: pointer;
+    }
     nav {
         .hamburger {
             width: 3.7rem;
+            cursor: pointer;
         }
     }
 }
