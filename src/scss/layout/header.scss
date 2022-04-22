@@ -1,8 +1,14 @@
+@use '../main/mixins.scss' as *;
+@use '../main/variables.scss' as *;
+
 .header {
     margin-top: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include desktop {
+        position: relative;
+    }
     .logo {
         cursor: pointer;
     }
@@ -10,6 +16,49 @@
         .hamburger {
             width: 3.7rem;
             cursor: pointer;
+            @include desktop {
+                display: none;
+            }
+        }
+        .navigation-list {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            li {
+                a {
+                    text-decoration: none;
+                    color: $grayish-violet;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+            }
+            @include mobile {
+                display: none;
+            }
+        }
+        @include desktop {
+            position: absolute;
+            left: 150px;
+        }
+    }
+    .buttons-navigation-desktop {
+        button {
+            font-size: 1.7rem;
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: bold;
+        }
+        .login {
+            background-color: #fff;
+            color: $grayish-violet;
+        }
+        .signUp {
+            background: $cyan;
+            color: #fff;
+        }
+        @include mobile {
+            display: none;
         }
     }
 }

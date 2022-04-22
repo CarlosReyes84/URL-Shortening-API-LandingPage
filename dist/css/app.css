@@ -37,12 +37,64 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 830px) {
+  .header {
+    position: relative;
+  }
+}
 .header .logo {
   cursor: pointer;
 }
 .header nav .hamburger {
   width: 3.7rem;
   cursor: pointer;
+}
+@media (min-width: 830px) {
+  .header nav .hamburger {
+    display: none;
+  }
+}
+.header nav .navigation-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.header nav .navigation-list li a {
+  text-decoration: none;
+  color: hsl(257deg, 7%, 63%);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 830px) {
+  .header nav .navigation-list {
+    display: none;
+  }
+}
+@media (min-width: 830px) {
+  .header nav {
+    position: absolute;
+    left: 150px;
+  }
+}
+.header .buttons-navigation-desktop button {
+  font-size: 1.7rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-weight: bold;
+}
+.header .buttons-navigation-desktop .login {
+  background-color: #fff;
+  color: hsl(257deg, 7%, 63%);
+}
+.header .buttons-navigation-desktop .signUp {
+  background: hsl(180deg, 66%, 49%);
+  color: #fff;
+}
+@media (max-width: 830px) {
+  .header .buttons-navigation-desktop {
+    display: none;
+  }
 }
 
 .get-started .work {
@@ -89,7 +141,7 @@ ul {
   font-size: 1.5rem;
 }
 .url-section .input-text:focus {
-  border: 1px solid red;
+  outline: 2px solid red;
 }
 .url-section .input-submit {
   width: 100%;
