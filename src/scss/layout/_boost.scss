@@ -1,4 +1,5 @@
 @use './../main/variables.scss' as *;
+@use './../main/mixins.scss' as *;
 
 .boost {
     position: relative;
@@ -6,6 +7,10 @@
     h2 {
         font-size: 2.5rem;
         color: #fff;
+        @include tablet {
+            font-size: 3rem;
+            font-weight: 700;
+        }
     }
     button {
         background-color: $cyan;
@@ -24,8 +29,17 @@
         position: absolute;
         z-index: -1;
         top: 0;
-        left: -55px;
-        background-repeat: no-repeat;
+        left: -10rem;
         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include tablet {
+            background-image: url('/images/bg-boost-desktop.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 250%;
+            left: -90rem;
+        }
     }
 }
