@@ -1,23 +1,47 @@
 @use '../main/variables.scss' as *;
+@use '../main/mixins.scss' as *;
 
 .statistics {
     position: relative;
     padding: 8rem 0rem;
+    @include mobile {
+        .line-desktop {
+            display: none;
+        }
+    }
+    @include tablet {
+        .line-desktop {
+            display: block;
+            width: 100%;
+            height: 10px;
+            background-color: $cyan;
+            position: absolute;
+            top: 580px;
+        }
+    }
     .statistics-bg {
         background-color: #f0f1f6;
         position: absolute;
-        width: 200%;
+        width: 500%;
         height: 100%;
         top: 0;
         z-index: -1;
-        left: -20rem;
+        left: -90rem;
     }
     h2 {
         font-size: 2.5rem;
+        @include tablet {
+            font-size: 4rem;
+            font-weight: 700;
+        }
     }
     p {
         font-size: 1.4rem;
         color: $grayish-violet;
+        @include tablet {
+            font-size: 1.8rem;
+            white-space: pre-wrap;
+        }
     }
     .cards-statistics {
         display: flex;
@@ -59,6 +83,27 @@
                 img {
                     width: 35px;
                 }
+                @include tablet {
+                    left: 10%;
+                    transform: translateX(0);
+                }
+            }
+            @include tablet {
+                text-align: left;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        @include tablet {
+            flex-direction: row;
+            gap: 4rem;
+            padding: 8rem 0rem 10rem 0rem;
+            .card-2 {
+                top: 4rem;
+            }
+            .card-3 {
+                top: 8rem;
             }
         }
     }
