@@ -1,4 +1,5 @@
 @use './.././main/variables.scss' as *;
+@use './.././main/mixins.scss' as *;
 
 .footer {
     position: relative;
@@ -16,12 +17,19 @@
         z-index: -1;
         left: -50px;
         background-color: $very-dark-violet;
+        @include tablet {
+            width: 250%;
+            left: -500px;
+        }
     }
     nav {
         .info {
             h4 {
                 color: #fff;
                 font-size: 1.4rem;
+                @include tablet {
+                    font-size: 1.8rem;
+                }
             }
             ul {
                 display: flex;
@@ -37,8 +45,15 @@
                     &:hover {
                         border-bottom: 1px solid #fff;
                     }
+                    @include tablet {
+                        font-size: 1.4rem;
+                    }
                 }
             }
+        }
+        @include tablet {
+            display: flex;
+            gap: 7rem;
         }
     }
     .logos {
@@ -48,6 +63,20 @@
         gap: 3rem;
         img {
             cursor: pointer;
+            @include tablet {
+                margin-right: 2rem;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
         }
+        @include tablet {
+            margin: 0rem;
+            display: block;
+        }
+    }
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
     }
 }
