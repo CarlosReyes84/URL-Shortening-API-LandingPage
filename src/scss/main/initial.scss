@@ -29,6 +29,11 @@ input, button, textarea, select {
 }
 button {
     cursor: pointer;
+    @include tablet {
+        &:hover {
+            opacity: .7;
+        }
+    }
 }
 ul {
     padding: 0;

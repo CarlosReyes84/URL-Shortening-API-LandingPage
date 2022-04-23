@@ -42,11 +42,11 @@
                     display: inline-block;
                     margin: 0 auto;
                     cursor: pointer;
-                    &:hover {
-                        border-bottom: 1px solid #fff;
-                    }
                     @include tablet {
                         font-size: 1.4rem;
+                        &:hover {
+                            color: $cyan;
+                        }
                     }
                 }
             }

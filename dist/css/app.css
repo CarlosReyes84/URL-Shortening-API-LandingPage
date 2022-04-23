@@ -36,6 +36,11 @@ input, button, textarea, select {
 button {
   cursor: pointer;
 }
+@media (min-width: 830px) {
+  button:hover {
+    opacity: 0.7;
+  }
+}
 
 ul {
   padding: 0;
@@ -78,6 +83,11 @@ h1, h2, h3, h4 {
   color: hsl(257deg, 7%, 63%);
   font-size: 1.5rem;
   font-weight: bold;
+}
+@media (min-width: 830px) {
+  .header nav .navigation-list li a:hover {
+    color: hsl(255deg, 11%, 22%);
+  }
 }
 @media (max-width: 830px) {
   .header nav .navigation-list {
@@ -242,6 +252,9 @@ h1, h2, h3, h4 {
     width: 20rem;
     height: 7rem;
     padding: 1rem 2rem;
+  }
+  .url-section .input-submit:hover {
+    opacity: 0.8;
   }
 }
 @media (min-width: 830px) {
@@ -465,12 +478,12 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   cursor: pointer;
 }
-.footer nav .info ul li:hover {
-  border-bottom: 1px solid #fff;
-}
 @media (min-width: 830px) {
   .footer nav .info ul li {
     font-size: 1.4rem;
+  }
+  .footer nav .info ul li:hover {
+    color: hsl(180deg, 66%, 49%);
   }
 }
 @media (min-width: 830px) {
