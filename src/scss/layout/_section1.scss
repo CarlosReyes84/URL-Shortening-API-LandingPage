@@ -1,8 +1,23 @@
 @use './../main/variables.scss' as *;
+@use './../main/mixins.scss' as *;
 
 .get-started {
     .work {
-        width: 50rem !important;
+        width: 50rem;
+        @include tablet {
+            display: none;
+        }
+        @include desktop {
+            display: block;
+            position: absolute;
+            right: -10rem;
+            width: 70rem;
+            top: 13rem;
+        }
+        @include desktop2 {
+            width: 85rem;
+            top: 8rem;
+        }
     }
     .text-section1 {
         h1 {
@@ -10,12 +25,25 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 2rem;
+            @include tablet {
+                font-size: 5.5rem;
+                margin-bottom: 0rem;
+            }
+            @include desktop {
+                font-size: 7rem;
+            }
         }
         p {
             font-size: 1.6rem;
             line-height: 1.5;
             margin-bottom: 2rem;
             color: $grayish-violet;
+            @include tablet {
+                font-size: 2rem;
+            }
+            @include desktop {
+                font-size: 2.3rem;
+            }
         }
         .btn-get-started {
             background: $cyan;
@@ -26,5 +54,18 @@
             border: none;
             border-radius: 3rem;
         }
+        @include tablet {
+            padding-top: 7rem;
+        }
+        @include desktop {
+            text-align: left;
+            width: 55%;
+        }
+    }
+    @include desktop {
+        margin-bottom: 15rem;
+    }
+    @include desktop2 {
+        margin-bottom: 20rem;
     }
 }

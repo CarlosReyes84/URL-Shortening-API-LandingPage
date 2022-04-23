@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include desktop {
+    @include tablet {
         position: relative;
     }
     .logo {
@@ -16,7 +16,7 @@
         .hamburger {
             width: 3.7rem;
             cursor: pointer;
-            @include desktop {
+            @include tablet {
                 display: none;
             }
         }
@@ -36,7 +36,7 @@
                 display: none;
             }
         }
-        @include desktop {
+        @include tablet {
             position: absolute;
             left: 150px;
         }
