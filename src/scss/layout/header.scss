@@ -6,9 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include tablet {
-        position: relative;
-    }
+    position: relative;
     .logo {
         cursor: pointer;
     }
@@ -35,10 +33,24 @@
                             color: $very-dark-blue;
                         }
                     }
+                    @include mobile {
+                        color: #fff;
+                        font-size: 1.7rem;
+                    }
                 }
             }
             @include mobile {
-                display: none;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: $dark-violet;
+                flex-direction: column;
+                width: 100%;
+                border-radius: 1rem;
+                padding: 4rem 0rem; 
+                gap: 4rem;
+                transform: translateY(-40rem);
+                transition: transform 1s ease;
             }
         }
         @include tablet {

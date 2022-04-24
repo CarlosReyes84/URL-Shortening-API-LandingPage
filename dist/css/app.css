@@ -50,16 +50,16 @@ h1, h2, h3, h4 {
   color: #34313c;
 }
 
+.navigation-list-active {
+  transform: translateY(0) !important;
+}
+
 .header {
   margin-top: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-@media (min-width: 830px) {
-  .header {
-    position: relative;
-  }
+  position: relative;
 }
 .header .logo {
   cursor: pointer;
@@ -90,8 +90,24 @@ h1, h2, h3, h4 {
   }
 }
 @media (max-width: 830px) {
+  .header nav .navigation-list li a {
+    color: #fff;
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 830px) {
   .header nav .navigation-list {
-    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: hsl(257deg, 27%, 26%);
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 4rem 0rem;
+    gap: 4rem;
+    transform: translateY(-40rem);
+    transition: transform 1s ease;
   }
 }
 @media (min-width: 830px) {
