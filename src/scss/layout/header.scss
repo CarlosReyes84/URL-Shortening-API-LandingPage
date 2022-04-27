@@ -41,16 +41,16 @@
             }
             @include mobile {
                 position: absolute;
-                top: 50px;
                 left: 0;
                 background-color: $dark-violet;
                 flex-direction: column;
+                justify-content: center;
                 width: 100%;
                 border-radius: 1rem;
-                padding: 4rem 0rem; 
                 gap: 4rem;
-                transform: translateY(-40rem);
-                transition: transform 1s ease;
+                height: 0rem;
+                overflow: hidden;
+                transition: height 1s ease;
             }
         }
         @include tablet {

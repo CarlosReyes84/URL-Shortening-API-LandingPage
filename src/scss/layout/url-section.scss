@@ -8,6 +8,7 @@
     margin: 7rem 0rem;
     background-image: url('/images/bg-shorten-mobile.svg');
     background-repeat: no-repeat;
+    position: relative;
         .input-text {
             height: 2.5rem;
             border-radius: .7rem;
@@ -44,6 +45,15 @@
                     opacity: .8;
                 }
             }
+        }
+        .alert-url {
+            position: absolute;
+            bottom: -40px;
+            color: red;
+            font-size: 1.5rem;
+            left: 10px;
+            font-style: italic;
+            opacity: 0;
         }
         @include tablet {
             display: flex;

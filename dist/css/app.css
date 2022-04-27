@@ -51,7 +51,11 @@ h1, h2, h3, h4 {
 }
 
 .navigation-list-active {
-  transform: translateY(0) !important;
+  height: 25rem !important;
+}
+
+.showAlert {
+  opacity: 1 !important;
 }
 
 .header {
@@ -98,16 +102,16 @@ h1, h2, h3, h4 {
 @media (max-width: 830px) {
   .header nav .navigation-list {
     position: absolute;
-    top: 50px;
     left: 0;
     background-color: hsl(257deg, 27%, 26%);
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     border-radius: 1rem;
-    padding: 4rem 0rem;
     gap: 4rem;
-    transform: translateY(-40rem);
-    transition: transform 1s ease;
+    height: 0rem;
+    overflow: hidden;
+    transition: height 1s ease;
   }
 }
 @media (min-width: 830px) {
@@ -231,6 +235,7 @@ h1, h2, h3, h4 {
   margin: 7rem 0rem;
   background-image: url("/images/bg-shorten-mobile.svg");
   background-repeat: no-repeat;
+  position: relative;
 }
 .url-section .input-text {
   height: 2.5rem;
@@ -273,6 +278,15 @@ h1, h2, h3, h4 {
     opacity: 0.8;
   }
 }
+.url-section .alert-url {
+  position: absolute;
+  bottom: -40px;
+  color: red;
+  font-size: 1.5rem;
+  left: 10px;
+  font-style: italic;
+  opacity: 0;
+}
 @media (min-width: 830px) {
   .url-section {
     display: flex;
@@ -283,6 +297,48 @@ h1, h2, h3, h4 {
     background-position: center;
     background-size: cover;
   }
+}
+
+.short-section-url {
+  text-align: left;
+  display: none;
+  margin-bottom: 10rem;
+}
+.short-section-url .line {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background-color: #f0f1f6;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+.short-section-url .line:last-of-type {
+  margin-bottom: 0;
+}
+.short-section-url .line .link {
+  font-size: 1.5rem;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(204, 194, 194);
+  color: #8d99ae;
+}
+.short-section-url .line .new-link {
+  color: hsl(180deg, 66%, 49%);
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+.short-section-url .line .copy-button {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: hsl(180deg, 66%, 49%);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0rem;
 }
 
 .statistics {
