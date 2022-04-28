@@ -22,8 +22,15 @@ function minify() {
         .pipe(dest('dist/css'))
 }
 
+function js() {
+    return src('src/js/*.js')
+    .pipe(terser())
+    .pipe(dest('dist/js'))
+}
+
 function watchArchives() {
     watch('src/scss/**/*.scss', compilecss);
+    watch('src/js/*.js', js);
 }
 
 exports.default = watchArchives
