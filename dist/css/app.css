@@ -58,6 +58,10 @@ h1, h2, h3, h4 {
   opacity: 1 !important;
 }
 
+.copied {
+  background-color: hsl(257deg, 27%, 26%) !important;
+}
+
 .header {
   margin-top: 3.5rem;
   display: flex;
@@ -324,6 +328,13 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid rgb(204, 194, 194);
   color: #8d99ae;
 }
+@media (min-width: 830px) {
+  .short-section-url .line .link {
+    width: 60%;
+    border: 0;
+    padding: 0;
+  }
+}
 .short-section-url .line .new-link {
   color: hsl(180deg, 66%, 49%);
   text-decoration: none;
@@ -339,6 +350,19 @@ h1, h2, h3, h4 {
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 0rem;
+}
+@media (min-width: 830px) {
+  .short-section-url .line .copy-button {
+    width: 10rem;
+  }
+}
+@media (min-width: 830px) {
+  .short-section-url .line {
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .statistics {

@@ -36,7 +36,7 @@ textInput.addEventListener('input', () => {
 InputSubmit.addEventListener('click', () => {
 
     const { text } = obj; //esta va a ser la url
-
+    textInput.value = '';
 
     if(!validURL(text)) {
         alertUrl.classList.add('showAlert');
@@ -46,7 +46,7 @@ InputSubmit.addEventListener('click', () => {
         }, 2000)
     }else {
         //console.log('Valid URL')
-
+        
         //do all the stuff
         createUrl();
     }
@@ -115,26 +115,21 @@ async function createUrl() {
     copyButton.textContent = 'Copy'
     copyButton.classList.add('copy-button')
     line.appendChild(copyButton)
-    copyButton.addEventListener('click', hello)
+    copyButton.addEventListener('click', () => {
+        copyToClipboard(newLink, copyButton)
+    })
 } 
 
-function hello() {
-    console.log('hello')
+function copyToClipboard(content, message) {
+    navigator.clipboard.writeText(content.href)
+
+    message.textContent = 'Copied!'
+    message.classList.add('copied')
+
+    setTimeout(() => {
+        message.textContent = 'Copy'
+        message.classList.remove('copied')
+    }, 3000);
 }
 
-// function myFunction() {
-//     /* Get the text field */
-//     var copyText = document.getElementById("myInput");
-  
-//     /* Select the text field */
-//     copyText.select();
-//     copyText.setSelectionRange(0, 99999); /* For mobile devices */
-  
-//      /* Copy the text inside the text field */
-//     navigator.clipboard.writeText(copyText.value);
-  
-//     /* Alert the copied text */
-//     alert("Copied the text: " + copyText.value);
-//   }
-
-//refactorizar
+//need to refactor

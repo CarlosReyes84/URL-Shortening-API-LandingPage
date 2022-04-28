@@ -23,6 +23,11 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid rgb(204, 194, 194);
             color: #8d99ae;
+            @include tablet {
+                width: 60%;
+                border: 0;
+                padding: 0;
+            }
         }
         .new-link {
             color: $cyan;
@@ -39,6 +44,15 @@
             border: none;
             border-radius: .5rem;
             padding: .5rem 0rem;
+            @include tablet {
+                width: 10rem;
+            }
+        }
+        @include tablet {
+            flex-direction: row;
+            gap: 0rem;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 }
