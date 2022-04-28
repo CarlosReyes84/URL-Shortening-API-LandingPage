@@ -1,82 +1,72 @@
 @use './.././main/variables.scss' as *;
 @use './.././main/mixins.scss' as *;
 
-.footer {
-    position: relative;
-    padding: 5rem 0rem;
-    .logo {
-        img {
-            cursor: pointer;
-        }
-    }
-    .bg-footer {
-        position: absolute;
-        height: 100%;
-        width: 200%;
-        top: 0;
-        z-index: -1;
-        left: -50px;
+.footer-section {
+    background-color: $very-dark-violet;
+    .footer {
+        padding: 5rem 0rem;
         background-color: $very-dark-violet;
-        @include tablet {
-            width: 250%;
-            left: -500px;
-        }
-    }
-    nav {
-        .info {
-            h4 {
-                color: #fff;
-                font-size: 1.4rem;
-                @include tablet {
-                    font-size: 1.8rem;
-                }
+        .logo {
+            img {
+                cursor: pointer;
             }
-            ul {
-                display: flex;
-                flex-direction: column;
-                li {
-                    list-style: none;
-                    color: $gray;
-                    font-size: 1.2rem;
-                    line-height: 2.7rem;
-                    display: inline-block;
-                    margin: 0 auto;
-                    cursor: pointer;
+        }
+        nav {
+            .info {
+                h4 {
+                    color: #fff;
+                    font-size: 1.4rem;
                     @include tablet {
-                        font-size: 1.4rem;
-                        &:hover {
-                            color: $cyan;
+                        font-size: 1.8rem;
+                    }
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        list-style: none;
+                        color: $gray;
+                        font-size: 1.2rem;
+                        line-height: 2.7rem;
+                        display: inline-block;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        @include tablet {
+                            font-size: 1.4rem;
+                            &:hover {
+                                color: $cyan;
+                            }
                         }
                     }
                 }
             }
-        }
-        @include tablet {
-            display: flex;
-            gap: 7rem;
-        }
-    }
-    .logos {
-        margin-top: 5rem;
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        img {
-            cursor: pointer;
             @include tablet {
-                margin-right: 2rem;
-                &:last-of-type {
-                    margin-right: 0;
+                display: flex;
+                gap: 7rem;
+            }
+        }
+        .logos {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            img {
+                cursor: pointer;
+                @include tablet {
+                    margin-right: 2rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
                 }
+            }
+            @include tablet {
+                margin: 0rem;
+                display: block;
             }
         }
         @include tablet {
-            margin: 0rem;
-            display: block;
+            display: flex;
+            justify-content: space-between;
         }
-    }
-    @include tablet {
-        display: flex;
-        justify-content: space-between;
     }
 }

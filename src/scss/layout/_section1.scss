@@ -2,6 +2,7 @@
 @use './../main/mixins.scss' as *;
 
 .get-started {
+    position: relative;
     .work {
         width: 50rem;
         @include tablet {
@@ -10,13 +11,14 @@
         @include desktop {
             display: block;
             position: absolute;
-            right: -10rem;
+            right: -25rem;
             width: 70rem;
-            top: 13rem;
+            top: 6rem;
         }
         @include desktop2 {
             width: 85rem;
-            top: 8rem;
+            top: 3rem;
+            right: -40rem;
         }
     }
     .text-section1 {
