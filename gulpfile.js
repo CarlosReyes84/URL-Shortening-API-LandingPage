@@ -12,14 +12,14 @@ function compilecss() {
 }
 
 function minify() {
-    return src('src/scss/app.scss')
-        const paths = [
-            autoprefixer(),
-            cssnano()
-        ]
+    const paths = [
+        autoprefixer(),
+        cssnano()
+    ]
+    return src('src/scss/app.scss', { sourcemaps: true })
         .pipe(sass())
         .pipe(postcss(paths))
-        .pipe(dest('dist/css'))
+        .pipe(dest('dist/css', { sourcemaps: true }))
 }
 
 function js() {
@@ -29,7 +29,7 @@ function js() {
 }
 
 function watchArchives() {
-    watch('src/scss/**/*.scss', compilecss);
+    watch('src/scss/**/*.scss', minify);
     watch('src/js/*.js', js);
 }
 
