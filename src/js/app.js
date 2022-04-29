@@ -9,7 +9,6 @@ imgHamburger.addEventListener('click', () => {
     navigation.classList.toggle('navigation-list-active');
 })
 
-
 let obj = {}
 
 textInput.addEventListener('input', () => {
@@ -48,9 +47,20 @@ InputSubmit.addEventListener('click', () => {
         //console.log('Valid URL')
         
         //do all the stuff
-        createUrl();
+        // createUrl();
+        getApi(obj['text']);
     }
 })
+
+const previous = () => {
+    const initial = JSON.parse(sessionStorage.getItem('initial'));
+
+    if(initial?.length > 0) {
+        return initial;
+    }else {
+        return [];
+    }
+}
 
 
 function validURL(str) {
@@ -64,32 +74,51 @@ function validURL(str) {
   }
 
 
+function again() {
+    const datos = previous(); // === []
+
+    datos.forEach(item => {
+        const line = document.createElement('DIV')
+        line.classList.add('line')
+        sectionShort.appendChild(line)
+
+        //url-actual
+        const link = document.createElement('P')
+        link.classList.add('link')
+        link.textContent = item.original_link;
+        line.appendChild(link)
+
+        //url-corta
+        const newLink = document.createElement('A')
+        newLink.classList.add('new-link')
+        newLink.href = `https://${item.short_link}`;
+        newLink.setAttribute('target', '_blank');   
+        newLink.textContent = `https://${item.short_link}`;
+        line.appendChild(newLink)
+
+        //copy button
+        const copyButton = document.createElement('BUTTON')
+        copyButton.textContent = 'Copy'
+        copyButton.classList.add('copy-button')
+        line.appendChild(copyButton)
+        copyButton.addEventListener('click', () => {
+            copyToClipboard(newLink, copyButton)
+        })
+    })
+}
+again();
+
+
 async function getApi(url) {
     const apiUrl = `https://api.shrtco.de/v2/shorten?url=${url}`;
     const res = await fetch(apiUrl);
     const data = await res.json()
 
-    const { result } = data;
-    const shortLink = result.short_link;
-    const originalLink = result.original_link;
+    const result = data.result;
+    // const shortLink = result.short_link;
+    // const originalLink = result.original_link;
     // console.log(result.short_link)
-
-
-    return shortLink;
-}
-// async function create() {
-//     const res1 = await getApi(obj['text']);
-
-//     const p = document.createElement('P');
-//     p.innerHTML = res1;
-//     sectionShort.appendChild(p);
-// }
-
-async function createUrl() {
-
-    const res1 = await getApi(obj['text']);
-
-    sectionShort.style.display = 'block';
+    const { short_link, original_link } = result;
 
     //linea
     const line = document.createElement('DIV')
@@ -99,15 +128,15 @@ async function createUrl() {
     //url-actual
     const link = document.createElement('P')
     link.classList.add('link')
-    link.textContent = obj['text'];
+    link.textContent = original_link;
     line.appendChild(link)
 
     //url-corta
     const newLink = document.createElement('A')
     newLink.classList.add('new-link')
-    newLink.href = `https://${res1}`;
+    newLink.href = `https://${short_link}`;
     newLink.setAttribute('target', '_blank');   
-    newLink.textContent = `https://${res1}`;
+    newLink.textContent = `https://${short_link}`;
     line.appendChild(newLink)
 
     //copy button
@@ -118,7 +147,25 @@ async function createUrl() {
     copyButton.addEventListener('click', () => {
         copyToClipboard(newLink, copyButton)
     })
-} 
+
+
+    // return shortLink;
+    const datos = previous(); // === []
+    datos.push({short_link, original_link})
+    sessionStorage.setItem('initial', JSON.stringify(datos));// ==[{short_link, original_link}]
+}
+
+// async function createUrl() {
+
+//     const res1 = await getApi(obj['text']);
+
+
+//     //add to session storage
+//     // sessionStorage.setItem('newUrl', res1);
+//     // sessionStorage.setItem('originalUrl', obj['text']);
+
+    
+// } 
 
 function copyToClipboard(content, message) {
     navigator.clipboard.writeText(content.href)
