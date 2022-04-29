@@ -5,7 +5,7 @@
     background-color: $dark-violet;
     padding: 2.4rem;
     border-radius: 1rem;
-    background-image: url('/images/bg-shorten-mobile.svg');
+    background-image: url('../../images/bg-shorten-mobile.svg');
     background-repeat: no-repeat;
     position: relative;
     margin: 7rem auto;
@@ -60,7 +60,7 @@
             padding: 4rem;
             justify-content: space-between;
             gap: 2rem;
-            background-image: url('/images/bg-shorten-desktop.svg');
+            background-image: url('../../images/bg-shorten-desktop.svg');
             background-position: center;
             background-size: cover;
         }
