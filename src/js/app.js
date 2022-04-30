@@ -17,21 +17,6 @@ textInput.addEventListener('input', () => {
     return obj;
 })
 
-// function validateUrl(res) {
-//     const empty = Object.keys(res).length === 0;
-
-//     if(empty) {
-//         console.log('url invalida')
-//         alertUrl.classList.add('showAlert');
-
-//         setTimeout(() => {
-//             alertUrl.classList.remove('showAlert');
-//         }, 2000)
-//     }else {
-//         console.log('url valida')
-//     }
-// }
-
 InputSubmit.addEventListener('click', () => {
 
     const { text } = obj; //esta va a ser la url
@@ -44,10 +29,8 @@ InputSubmit.addEventListener('click', () => {
             alertUrl.classList.remove('showAlert');
         }, 2000)
     }else {
-        //console.log('Valid URL')
         
         //do all the stuff
-        // createUrl();
         getApi(obj['text']);
     }
 })
@@ -115,9 +98,6 @@ async function getApi(url) {
     const data = await res.json()
 
     const result = data.result;
-    // const shortLink = result.short_link;
-    // const originalLink = result.original_link;
-    // console.log(result.short_link)
     const { short_link, original_link } = result;
 
     //linea
@@ -155,17 +135,6 @@ async function getApi(url) {
     sessionStorage.setItem('initial', JSON.stringify(datos));// ==[{short_link, original_link}]
 }
 
-// async function createUrl() {
-
-//     const res1 = await getApi(obj['text']);
-
-
-//     //add to session storage
-//     // sessionStorage.setItem('newUrl', res1);
-//     // sessionStorage.setItem('originalUrl', obj['text']);
-
-    
-// } 
 
 function copyToClipboard(content, message) {
     navigator.clipboard.writeText(content.href)
