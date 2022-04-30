@@ -31,6 +31,7 @@
                         display: inline-block;
                         margin: 0 auto;
                         cursor: pointer;
+                        transition: color 200ms ease;
                         @include tablet {
                             font-size: 1.4rem;
                             &:hover {

@@ -29,6 +29,7 @@
                     color: $grayish-violet;
                     font-size: 1.5rem;
                     font-weight: bold;
+                    transition: color 200ms ease;
                     @include tablet {
                         &:hover {
                             color: $very-dark-blue;

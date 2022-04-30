@@ -30,6 +30,7 @@ input, button, textarea, select {
 }
 button {
     cursor: pointer;
+    transition: opacity 200ms ease;
     @include tablet {
         &:hover {
             opacity: .7;

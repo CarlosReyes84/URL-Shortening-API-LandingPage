@@ -37,6 +37,7 @@
             border: none;
             font-weight: bold;
             cursor: pointer;
+            transition: all 200ms ease;
             @include tablet {
                 width: 20rem;
                 height: 7rem;

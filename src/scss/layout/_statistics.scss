@@ -33,7 +33,6 @@
             color: $grayish-violet;
             @include tablet {
                 font-size: 1.8rem;
-                white-space: pre-wrap;
             }
         }
         .cards-statistics {
@@ -75,14 +74,20 @@
                     transform: translateX(-50%);
                     img {
                         width: 35px;
+                        @include tablet {
+                            width: 40px;
+                        }
                     }
                     @include tablet {
                         left: 10%;
                         transform: translateX(0);
+                        width: 9rem;
+                        height: 9rem;
                     }
                 }
                 @include tablet {
                     text-align: left;
+                    padding: 6rem 2rem 2rem;
                     &::after {
                         display: none;
                     }
